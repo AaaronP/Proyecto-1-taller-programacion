@@ -66,7 +66,7 @@ def foo(c: int, r: int, t: int) -> None:
         i += 1
 
 
-foo(20, 2, 70)
+foo(2, 1, 2)
 
 fin = time.time()
 print("Seconds:", fin - inicio)
