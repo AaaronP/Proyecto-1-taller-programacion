@@ -7,41 +7,20 @@ https://www.w3schools.com/python/python_ref_list.asp
 https://www.w3schools.com/python/ref_string_format.asp
 https://ellibrodepython.com/tiempo-ejecucion-python
 https://docs.hektorprofe.net/python/funcionalidades-avanzadas/comprension-de-listas/
+https://www.tutorialspoint.com/How-to-insert-an-object-in-a-list-at-a-given-position-in-Python
 """
 
 
 # Detectar si un numero sobrepasa el
-# limite de R
-def todo(n: int, r: int) -> bool:
-    list = [int(i) for i in str(n)]
-
-    if len(list) < 4:
-        return False
-
-    if len(list) == 4:
-        list.append(0)
-
-    for i in list:
-        if list.count(i) > r:
-            return False
-
-    return True
-
-
+# limite de r
 def todo2(n1, n2, r):
-    list1 = [int(i) for i in str(n1)]
-    list2 = [int(i) for i in str(n2)]
+    # añadiendo un 0 al numero si solo tiene 4 digitos
+    if n1 == 9999:
+        n1 *= 10
+    if n2 >= 1000 and n2 < 10000:
+        n2 *= 10
 
-    if len(list1) < 4 or len(list2) < 4:
-        return False
-
-    if len(list1) == 4:
-        list1.append(0)
-    if len(list2) == 4:
-        list2.append(0)
-
-    list = list1 + list2
-
+    list = str(n1) + str(n2)
     for i in list:
         if list.count(i) > r:
             return False
@@ -50,33 +29,34 @@ def todo2(n1, n2, r):
 
 
 def foo(c: int, r: int) -> None:
-    if r > 5 or r < 1:
-        print(-1)
-        return
+    list = []
+    for b in range(9999, 100000):
+        if b % c:
+            continue
+        k = b // c
+        if k < 1000:
+            continue
 
-    b = 9999
-
-    while b <= 99999:
-        if todo(b, r):
-            k = b // c
-            if not b % c and todo2(b, k, r):
-                print(f"{b}/{k}={c}")
-        b += 1
-
+        if todo2(b, k, r):
+            list.insert(0, f"{b}/{k}={c}")
+            
+    for i in list:
+        print(i)
 
 # cantidad de casos de prueba
 t = int(input())
 
-list = []
+cases = []
 for i in range(t):
     string = input()
     c, r = string.split()
-    list.append((int(c), int(r)))
+    cases.append((int(c), int(r)))
 
 inicio = time.time()
 
-for i in list:
+for i in cases:
     foo(i[0], i[1])
+    print()
 
 fin = time.time()
 print("Seconds:", fin - inicio)
