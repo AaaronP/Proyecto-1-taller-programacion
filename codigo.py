@@ -6,14 +6,12 @@ https://www.baeldung.com/cs/backtracking-algorithms#:~:text=Backtracking%20is%20
 https://www.w3schools.com/python/python_ref_list.asp
 https://www.w3schools.com/python/ref_string_format.asp
 https://ellibrodepython.com/tiempo-ejecucion-python
-https://docs.hektorprofe.net/python/funcionalidades-avanzadas/comprension-de-listas/
-https://www.tutorialspoint.com/How-to-insert-an-object-in-a-list-at-a-given-position-in-Python
 """
 
 
 # Detectar si un numero sobrepasa el
 # limite de r
-def todo2(n1, n2, r):
+def todo(n1, n2, r):
     # añadiendo un 0 al numero si solo tiene 4 digitos
     if n1 == 9999:
         n1 *= 10
@@ -30,18 +28,24 @@ def todo2(n1, n2, r):
 
 def foo(c: int, r: int) -> None:
     list = []
-    for b in range(9999, 100000):
+    b = 10000
+    while b < 100000:
         if b % c:
+            b += c
             continue
         k = b // c
         if k < 1000:
+            b += c
             continue
 
-        if todo2(b, k, r):
-            list.insert(0, f"{b}/{k}={c}")
-            
-    for i in list:
+        if todo(b, k, r):
+            list.append(f"{b}/{k}={c}")
+
+        b += c
+
+    for i in list[::-1]:
         print(i)
+
 
 # cantidad de casos de prueba
 t = int(input())
@@ -53,6 +57,7 @@ for i in range(t):
     cases.append((int(c), int(r)))
 
 inicio = time.time()
+
 
 for i in cases:
     foo(i[0], i[1])
