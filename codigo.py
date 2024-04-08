@@ -58,7 +58,6 @@ for i in range(t):
 
 inicio = time.time()
 
-
 for i in cases:
     foo(i[0], i[1])
     print()
