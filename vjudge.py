@@ -109,13 +109,70 @@ def aux(n):
 
 # print(aux(3)) # 194317694037901482048000
 
+
 def sqrt_aux(n, i, s, p):
-    m = (i + s)/2
-    if m*m - p < n and m*m + p > n:
+    m = (i + s) / 2
+    if m * m - p < n and m * m + p > n:
         return m
-    if m*m > n:
+    if m * m > n:
         return sqrt_aux(n, i, m, p)
     return sqrt_aux(n, m, s, p)
 
+
 def sqrt(n):
     return sqrt_aux(n, 0, n, 1e-6)
+
+
+def genAcum(list):
+    acu = [0]
+    for i in list:
+        acu.append(i + acu[-1])
+    return acu
+
+
+# def sumaEficiente(list):
+#     acu = genAcum(list)
+#     for i in range(10):
+#         ini = int(input())
+#         fin = int(input())
+#         print(acu[fin] - acu[ini - 1])
+
+# print(sumaEficiente([1,2,3,4,5,6]))
+
+
+def todo(n1, n2, r):
+    # añadiendo un 0 al numero si solo tiene 4 digitos
+    if n1 == 9999:
+        n1 *= 10
+    if n2 >= 1000 and n2 < 10000:
+        n2 *= 10
+
+    list = []
+    while n1 > 0:
+        list.append(n1 % 10)
+        n1 //= 10
+
+    return list
+
+
+print(todo(12340, 1234, 5))
+
+
+def bb(list, n):
+    ini = 0
+    fin = len(list) - 1
+
+    while ini <= fin:
+        m = (ini + fin) // 2
+
+        if list[m] == n:
+            return m
+        if list[m] > n:
+            fin = m - 1
+        else:
+            ini = m + 1
+
+    return -1
+
+
+print(bb([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 1))

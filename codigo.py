@@ -22,7 +22,7 @@ def todo(n1, n2, r):
     for i in list:
         if list.count(i) > r:
             return False
-
+    
     return True
 
 
