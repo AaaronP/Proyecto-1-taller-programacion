@@ -30,9 +30,6 @@ def foo(c: int, r: int) -> None:
     list = []
     b = 10000
     while b < 100000:
-        if b % c:
-            b += c
-            continue
         k = b // c
         if k < 1000:
             b += c

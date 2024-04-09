@@ -78,27 +78,44 @@ def prodAux(n):
 
 # print(prodAux(3))
 
+
 def sum1(i, p, n, res):
     if p > i:
         return res
-    return sum1(i, p + 1, n, res + p*n)
+    return sum1(i, p + 1, n, res + p * n)
 
-def sumi(n, k = 1, res = 0):
+
+def sumi(n, k=1, res=0):
     if k > n:
         return res
     return sumi(n, k + 1, res + k)
 
-def sumT(n, j = 1, res = 0):
+
+def sumT(n, j=1, res=0):
     if j > n:
         return res
     return sumT(n, j + 1, res + j)
 
-def pi(t, n, i, res = 1):
+
+def pi(t, n, i, res=1):
     if i > t:
         return res
-    return pi(t, n, i + 1, res * i * sum1(i*i, i, n, 0))
+    return pi(t, n, i + 1, res * i * sum1(i * i, i, n, 0))
+
 
 def aux(n):
-    return pi(sumT((n*n) - 2*n + 1), n, sumi(n), 1)
+    return pi(sumT((n * n) - 2 * n + 1), n, sumi(n), 1)
 
-#print(aux(3)) # 194317694037901482048000
+
+# print(aux(3)) # 194317694037901482048000
+
+def sqrt_aux(n, i, s, p):
+    m = (i + s)/2
+    if m*m - p < n and m*m + p > n:
+        return m
+    if m*m > n:
+        return sqrt_aux(n, i, m, p)
+    return sqrt_aux(n, m, s, p)
+
+def sqrt(n):
+    return sqrt_aux(n, 0, n, 1e-6)
