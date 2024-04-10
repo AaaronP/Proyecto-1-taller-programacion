@@ -22,7 +22,7 @@ def todo(n1, n2, r):
     for i in list:
         if list.count(i) > r:
             return False
-    
+
     return True
 
 
@@ -37,11 +37,14 @@ def foo(c: int, r: int) -> None:
 
         if todo(b, k, r):
             list.append(f"{b}/{k}={c}")
+            # print(f"{b}/{k}={c}")
 
         b += c
 
-    for i in list[::-1]:
-        print(i)
+    # for i in list[::-1]:
+    #     #print(i)
+    #     pass
+    return list
 
 
 # cantidad de casos de prueba
@@ -55,9 +58,14 @@ for i in range(t):
 
 inicio = time.time()
 
+tests = []
 for i in cases:
-    foo(i[0], i[1])
-    print()
+    tests.append(foo(i[0], i[1]))
+
+for i in tests:
+    print(i)
+    #for j in i[::-1]:
+    #    print(j)
 
 fin = time.time()
 print("Seconds:", fin - inicio)
