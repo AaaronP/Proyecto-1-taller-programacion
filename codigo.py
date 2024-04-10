@@ -64,7 +64,7 @@ for i in cases:
 
 for i in tests:
     print(i)
-    #for j in i[::-1]:
+    # for j in i[::-1]:
     #    print(j)
 
 fin = time.time()
