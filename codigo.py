@@ -1,12 +1,10 @@
+import time
+
+
 # Detectar si un numero sobrepasa el
 # limite de r
 def todo(n1, n2, r):
     # añadiendo un 0 al numero si solo tiene 4 digitos
-    if n1 == 9999:
-        n1 *= 10
-    if n2 >= 1000 and n2 < 10000:
-        n2 *= 10
-
     list = str(n1) + str(n2)
     for i in list:
         if list.count(i) > r:
@@ -17,7 +15,7 @@ def todo(n1, n2, r):
 
 def foo(c: int, r: int) -> None:
     list = []
-    b = 9999
+    b = 10000
     while b < 100000:
         k = b // c
         if k < 1000:
@@ -41,6 +39,8 @@ for i in range(t):
     c, r = string.split()
     cases.append((int(c), int(r)))
 
+inicio = time.time()
+
 tests = []
 for i in cases:
     tests.append(foo(i[0], i[1]))
@@ -48,3 +48,6 @@ for i in cases:
 for i in tests:
     with open("output.txt", "a") as f:
         f.write(i + "\n")
+
+fin = time.time()
+print("Seconds:", fin - inicio)
