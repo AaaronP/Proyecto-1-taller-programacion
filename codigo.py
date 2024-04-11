@@ -28,7 +28,7 @@ def todo(n1, n2, r):
 
 def foo(c: int, r: int) -> None:
     list = []
-    b = 10000
+    b = 9999
     while b < 100000:
         k = b // c
         if k < 1000:
@@ -36,15 +36,11 @@ def foo(c: int, r: int) -> None:
             continue
 
         if todo(b, k, r):
-            list.append(f"{b}/{k}={c}")
-            # print(f"{b}/{k}={c}")
+            list.append(f"{b}/{k}={c}\n")
 
         b += c
 
-    # for i in list[::-1]:
-    #     #print(i)
-    #     pass
-    return list
+    return "".join(list[::-1])
 
 
 # cantidad de casos de prueba
@@ -63,9 +59,5 @@ for i in cases:
     tests.append(foo(i[0], i[1]))
 
 for i in tests:
-    print(i)
-    # for j in i[::-1]:
-    #    print(j)
-
-fin = time.time()
-print("Seconds:", fin - inicio)
+    with open("texto.txt", "a") as f:
+        f.write(i + "\n")
