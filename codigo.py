@@ -1,14 +1,3 @@
-import time
-
-# Referencias
-"""
-https://www.baeldung.com/cs/backtracking-algorithms#:~:text=Backtracking%20is%20an%20algorithmic%20technique,satisfy%20them%20will%20be%20removed.
-https://www.w3schools.com/python/python_ref_list.asp
-https://www.w3schools.com/python/ref_string_format.asp
-https://ellibrodepython.com/tiempo-ejecucion-python
-"""
-
-
 # Detectar si un numero sobrepasa el
 # limite de r
 def todo(n1, n2, r):
@@ -52,12 +41,10 @@ for i in range(t):
     c, r = string.split()
     cases.append((int(c), int(r)))
 
-inicio = time.time()
-
 tests = []
 for i in cases:
     tests.append(foo(i[0], i[1]))
 
 for i in tests:
-    with open("texto.txt", "a") as f:
+    with open("output.txt", "a") as f:
         f.write(i + "\n")
