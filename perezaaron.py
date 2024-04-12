@@ -43,8 +43,6 @@ for i in range(t):
     c, r = string.split()
     cases.append((int(c), int(r)))
 
-inicio = time.time()
-
 tests = []
 for i in cases:
     tests.append(foo(i[0], i[1]))
@@ -52,6 +50,3 @@ for i in cases:
 for i in tests:
     with open("output.txt", "a") as f:
         f.write(i + "\n")
-
-fin = time.time()
-print("Seconds:", fin - inicio)
