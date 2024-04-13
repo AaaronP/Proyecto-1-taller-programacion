@@ -19,13 +19,11 @@ def todo(n1, n2, r):
         n2 *= 10
 
     list = str(n1) + str(n2)
-    # print(contar_digitos(int(str(n1) + str(n2)), [0]*10, r))
     for i in list:
         if list.count(i) > r:
             return False
 
     return True
-    # return contar_digitos(int(str(n1) + str(n2)), [0] * 10, r)
 
 
 """
@@ -55,7 +53,6 @@ tests = []
 for i in cases:
     tests.append(foo(i[0], i[1]))
 
-    # print(i)
 with open("output.txt", "a") as f:
     for i in tests:
         f.write(i + "\n")
