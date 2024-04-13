@@ -46,17 +46,9 @@ def foo(c: int, r: int) -> None:
     return string
 
 
-import time
-
-inicio = time.time()
-
 tests = []
 for i in cases:
     tests.append(foo(i[0], i[1]))
 
 for i in tests:
-    with open("output.txt", "a") as f:
-        f.write(i + "\n")
-
-fin = time.time()
-print(fin - inicio)
+    print(i)
