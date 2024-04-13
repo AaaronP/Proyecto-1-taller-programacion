@@ -61,4 +61,7 @@ for i in cases:
 
 # O(t)
 for i in tests:
-    print(i)
+    if i == tests[-1]:
+        print(i[:-1])
+    else:
+        print(i)
