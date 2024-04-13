@@ -11,15 +11,6 @@ Dominio: n1, n2 y r, números naturales, donde n1 y n2 son los números a compro
 Ambito: True, False
 """
 
-def contar_digitos(numero, contador):
-        while numero > 0:
-            digito = numero % 10
-            contador[digito] += 1
-            if contador[digito] > r:
-                return False
-            numero //= 10
-        return True
-
 
 def todo(n1, n2, r):
     if n1 >= 1000 and n1 < 10000:
