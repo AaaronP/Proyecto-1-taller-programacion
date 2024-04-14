@@ -5,7 +5,7 @@ para un cociente dado</h1>
 
 El proyecto consiste dado un numero C, hallar
 todos los n´umeros de la forma de cinco dıgitos
-(o menos): d_1d_2d_3d_4d_5 y d_6d_7d_8d_9d_0 (siendo di
+(o menos): $d_1d_2d_3d_4d_5 y d_6d_7d_8d_9d_0$ (siendo di
 un dıgito) tal que
 
 $$\frac{d_0d_1d_2d_3d_4}{d_5d_6d_7d_8d_9} = C$$
