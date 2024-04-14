@@ -41,7 +41,7 @@ def foo(c: int, r: int) -> str:
     # y en el mejor haria solo 4000 bucles
 
     # 98999 * 100 = 9,899,900
-    # O(9 899 900)
+    # O(9 899 900) en el peor de los casos
     while a * c < 100000:
         b = a * c
 
