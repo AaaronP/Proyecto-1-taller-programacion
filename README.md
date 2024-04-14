@@ -1,7 +1,7 @@
-<h1 align="center">Numeradores y denominadores
+<h1>Numeradores y denominadores
 para un cociente dado</h1>
 
-<h2 align="center">Proyecto 1</h2>
+<h2>Proyecto 1</h2>
 
 El proyecto consiste dado un numero C, hallar
 todos los n´umeros de la forma de cinco dıgitos
