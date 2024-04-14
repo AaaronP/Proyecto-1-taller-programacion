@@ -4,7 +4,7 @@ para un cociente dado</h1>
 <h2>Proyecto 1 - TEC Alajuela</h2>
 
 El proyecto consiste dado un numero C, hallar
-todos los n´umeros de la forma de cinco dıgitos
+todos los numeros de la forma de cinco dıgitos
 (o menos): $d_1d_2d_3d_4d_5$ y $d_6d_7d_8d_9d_0$ (siendo $d_i$
 un dıgito) tal que
 
