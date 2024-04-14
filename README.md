@@ -1,7 +1,7 @@
 <h1>Numeradores y denominadores
 para un cociente dado</h1>
 
-<h2>Proyecto 1</h2>
+<h2>Proyecto 1 - TEC Alajuela</h2>
 
 El proyecto consiste dado un numero C, hallar
 todos los n´umeros de la forma de cinco dıgitos
@@ -15,3 +15,6 @@ el n´umero de casos de prueba a resolver, considere
 que 1 ≤ T ≤ 100. Cada caso de prueba
 consiste en dos enteros separados por espacio, C
 y R, considerar que 1 ≤ C ≤ 20 y 1 ≤ R ≤ 5.
+
+---
+<p align="right">Alex Brenes, Aaron Perez, 2024</p>
